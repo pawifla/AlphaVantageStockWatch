@@ -1,0 +1,21 @@
+TODO FOR STOCK WATCH:
+
+1. Create loop to get current data and display in as tape
+    see if you can grab multiple symbols with one call
+        the logic behind this one should be to catch up on most recent numbers since other calls.
+        it will wait if there are other calls wanted but will continue to update if not.
+    have a dropdown for symbols to add the the tape
+        get list from api site or scrape
+        try using this for autocomplete
+        http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=a&region=1&lang=en&callback=YAHOO.Finance.SymbolSuggest.ssCallback 
+
+Create a json/grapher
+    get the timeseriesData and shuv the json into a grapher
+    see how you can compare on the same grid.
+
+Create a company page where you can look at the company overview
+    function=OVERVIEW
+
+Integrate Cryptos
+    either same functions as the rest, or separate place
+
