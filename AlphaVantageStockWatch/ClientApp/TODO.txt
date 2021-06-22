@@ -19,3 +19,4 @@ Create a company page where you can look at the company overview
 Integrate Cryptos
     either same functions as the rest, or separate place
 
+//https://<website>/api/Stock/TIME_SERIES_DAILY/AAPL
