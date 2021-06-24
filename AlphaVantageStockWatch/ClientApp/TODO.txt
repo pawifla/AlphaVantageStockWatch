@@ -20,3 +20,30 @@ Integrate Cryptos
     either same functions as the rest, or separate place
 
 //https://<website>/api/Stock/TIME_SERIES_DAILY/AAPL
+//this is pretty useful  ://query1.finance.yahoo.com/v7/finance/quote?&symbols=aapl 
+https://query1.finance.yahoo.com/v7/finance/quote?lang=en-US&region=US&corsDomain=finance.yahoo.com&symbols=FB
+
+UP NEXT:
+    well, that was way harder than anticipated. 
+    next steps do easy things.
+        +use yahoo query to get current price for TickerTape 
+            data needed: Symbol, current Price, Percentage change on the day.
+            use the mf yahoo deal. way easier
+        + another easy thing to do will be to use the yahoo autocomplete deal for a search option for tickers
+            generate a drop down list based on the api 
+                data needed: symbol, company name
+        +once these are complete, begin making an overview page that uses alphavantage.
+            this will use the overview function paired with the autocomplete thingy
+            this will be the most long one to deal with
+        +finally, find a graphing library to shove the alphavantage data into.
+            figure out how to change based on times, and such.
+            yahdaddadddadadada
+            
+
+Component Structure throughts
++mainContainer
+    +TickerTape
+    +AutoComplete deal
+    +GraphComponent
+    +OverView stuff
+    
