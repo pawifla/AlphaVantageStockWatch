@@ -1,0 +1,29 @@
+.Tape{
+    color:white;
+    background-color: black;
+    padding-bottom: 0;
+    line-height: 15px;
+}
+h3, h2{
+    margin: auto;
+}
+.coName{
+    vertical-align: middle;
+}
+.posPercentage{
+    line-height:0.9;
+    vertical-align:top;
+    padding: 0;
+    color:green;
+}
+.negPercentage{
+    vertical-align:top;
+    padding:0;
+    color:red;
+}
+.price{
+ vertical-align: bottom;   
+}
+.percentage{
+vertical-align: top; 
+}

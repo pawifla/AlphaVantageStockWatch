@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 
 
-const TickerTape = props =>{
+const Overview = props =>{
     //    const [data, setData] = useState([])
     const defaultData = [{
     "Meta Data": {
@@ -25,12 +25,25 @@ const TickerTape = props =>{
  
     let firstDates = stockData['Time Series (Daily)'];
     let firstValues = [{}];
-    useEffect(()=>{
+    const getStockInfo = ()=>{
         fetch('api/Stock/TIME_SERIES_DAILY/TSLA')
         .then(res => res.json())
         .then(data=>{
+            console.log("this should be the date"+data);
+            console.log(data["Meta Data"]["2. Symbol"]);
+            console.log(data["Meta Data"][1]);
             firstDates = Object.keys(data["Time Series (Daily)"]);
             firstValues = Object.values(data["Time Series (Daily)"]);
+            //create a loop for all or figure a better way
+            //forEach(g in data){
+            //setData({date: g["Times Series (Daily)"][0].toString(),
+            //     open:g["Times Series (Daily)"]['1. open'],
+            //     high: g["Times Series (Daily)"]['2. high'],
+            //     low: g["Times Series (Daily)"]['3. low'],
+            //     close: g["Times Series (Daily)"]['4. close'],
+            //     volume: g["Times Series (Daily)"]['5. volume'],
+            //    });
+            //}
             setData({date: firstDates[0].toString(),
                  open:firstValues[0]['1. open'],
                  high: firstValues[0]['2. high'],
@@ -40,25 +53,46 @@ const TickerTape = props =>{
                 });
             console.log(stockData);
         }).catch(error=>console.log(error));
-    },[]);
+    };
+    const getData = async (stockData) =>{
+        try{
+            await getStockInfo(stockData)
+        }catch(e){
+            return (e)=>console.log(e);
+        }
+    }
+    if(stockData == timeSeriesObject ){
+    getData();
+    }
+    console.log(stockData);
     return (
         <div>
             <table className='table'>
                 <thead>
+                    <tr>
                     <th>Date</th>
                     <th>Open</th>
                     <th>High</th>
                     <th>Low</th>
                     <th>Close</th>
                     <th>Volume</th>
+                    </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td>{stockData.date}</td>
+                        <td>{stockData.open}</td>
+                        <td>{stockData.high}</td>
+                        <td>{stockData.low}</td>
+                        <td>{stockData.close}</td>
+                        <td>{stockData.volume}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     );
 }
-export default TickerTape;
+export default Overview;
                     //if(stockData){
                     //stockData.map(data =>(
                     //    <tr key={data.date}>
